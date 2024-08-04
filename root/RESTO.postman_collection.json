@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "af79587b-50e6-456b-8c92-62e2079c11b0",
+		"name": "RESTO",
+		"description": "Test Backend Programmer EnterKomputer - Hani Maliah",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29373888"
+	},
+	"item": [
+		{
+			"name": "POST - Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name_order\" : \"bebe\",\r\n    \"order_time\" : \"2024-08-02 22:02:12\",\r\n    \"table\" : \"MEJA NO 1\",\r\n    \"orders\" : [\r\n        {\r\n            \"product_name\" : \"Jeruk\",\r\n            \"variant\" : \"DINGIN\",\r\n            \"quantity\" : 1\r\n        },\r\n        {\r\n            \"product_name\" : \"Kopi\",\r\n            \"variant\" : \"PANAS\",\r\n            \"quantity\" : 1\r\n        },\r\n        {\r\n            \"product_name\" : \"Nasi Goreng + Jeruk Dingin\",\r\n            \"variant\" : \"-\",\r\n            \"quantity\" : 2\r\n        },\r\n        {\r\n            \"product_name\" : \"Teh\",\r\n            \"variant\" : \"MANIS\",\r\n            \"quantity\" : 1\r\n        },\r\n        {\r\n            \"product_name\" : \"Mie\",\r\n            \"variant\" : \"GORENG\",\r\n            \"quantity\" : 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders"
+					]
+				},
+				"description": "{  \n\"name_order\" : \"{type: string}\",  \n\"order_time\" : \"{type: datetime}\",  \n\"table\" : \"{di isi table_number berdasarkan dari tabel meja ; type: string;}\",  \n\"orders\" : \\[ {\"di isi berdasarkan dari tabel products: type: json}\\]  \n}"
+			},
+			"response": [
+				{
+					"name": "POST - Order",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name_order\" : \"bebe\",\r\n    \"order_time\" : \"2024-08-02 22:02:12\",\r\n    \"table\" : \"MEJA NO 1\",\r\n    \"orders\" : [\r\n        {\r\n            \"product_name\" : \"Jeruk\",\r\n            \"variant\" : \"DINGIN\",\r\n            \"quantity\" : 1\r\n        },\r\n        {\r\n            \"product_name\" : \"Kopi\",\r\n            \"variant\" : \"PANAS\",\r\n            \"quantity\" : 1\r\n        },\r\n        {\r\n            \"product_name\" : \"Nasi Goreng + Jeruk Dingin\",\r\n            \"variant\" : \"-\",\r\n            \"quantity\" : 2\r\n        },\r\n        {\r\n            \"product_name\" : \"Teh\",\r\n            \"variant\" : \"MANIS\",\r\n            \"quantity\" : 1\r\n        },\r\n        {\r\n            \"product_name\" : \"Mie\",\r\n            \"variant\" : \"GORENG\",\r\n            \"quantity\" : 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"printerB\": {\r\n        \"order_id\": 57,\r\n        \"table_number\": 1,\r\n        \"items\": [\r\n            {\r\n                \"product_id\": 1,\r\n                \"product_name\": \"Jeruk\",\r\n                \"variant\": \"DINGIN\",\r\n                \"quantity\": 3\r\n            },\r\n            {\r\n                \"product_id\": 6,\r\n                \"product_name\": \"Kopi\",\r\n                \"variant\": \"PANAS\",\r\n                \"quantity\": 1\r\n            },\r\n            {\r\n                \"product_id\": 3,\r\n                \"product_name\": \"Teh\",\r\n                \"variant\": \"MANIS\",\r\n                \"quantity\": 1\r\n            }\r\n        ]\r\n    },\r\n    \"printerC\": {\r\n        \"order_id\": 57,\r\n        \"table_number\": 1,\r\n        \"items\": [\r\n            {\r\n                \"product_id\": 10,\r\n                \"product_name\": \"Nasi Goreng\",\r\n                \"variant\": \"-\",\r\n                \"quantity\": 2\r\n            },\r\n            {\r\n                \"product_id\": 8,\r\n                \"product_name\": \"Mie\",\r\n                \"variant\": \"GORENG\",\r\n                \"quantity\": 1\r\n            }\r\n        ]\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "GET - Bill",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/bill?table_name=MEJA NO 1&name_order=bebe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"bill"
+					],
+					"query": [
+						{
+							"key": "table_name",
+							"value": "MEJA NO 1"
+						},
+						{
+							"key": "name_order",
+							"value": "bebe"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET - Bill",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/bill?table_name=MEJA NO 1&name_order=bebe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bill"
+							],
+							"query": [
+								{
+									"key": "table_name",
+									"value": "MEJA NO 1"
+								},
+								{
+									"key": "name_order",
+									"value": "bebe"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"printerA\": {\r\n        \"order_id\": 57,\r\n        \"order_time\": \"2024-08-02T15:02:12.000Z\",\r\n        \"table_number\": \"MEJA NO 1\",\r\n        \"name_order\": \"bebe\",\r\n        \"items\": [\r\n            {\r\n                \"product_name\": \"Jeruk\",\r\n                \"variant\": \"DINGIN\",\r\n                \"quantity\": 1,\r\n                \"price\": 12000,\r\n                \"total\": 12000\r\n            },\r\n            {\r\n                \"product_name\": \"Kopi\",\r\n                \"variant\": \"PANAS\",\r\n                \"quantity\": 1,\r\n                \"price\": 6000,\r\n                \"total\": 6000\r\n            },\r\n            {\r\n                \"product_name\": \"Teh\",\r\n                \"variant\": \"MANIS\",\r\n                \"quantity\": 1,\r\n                \"price\": 8000,\r\n                \"total\": 8000\r\n            },\r\n            {\r\n                \"product_name\": \"Mie\",\r\n                \"variant\": \"GORENG\",\r\n                \"quantity\": 1,\r\n                \"price\": 15000,\r\n                \"total\": 15000\r\n            },\r\n            {\r\n                \"product_name\": \"Nasi Goreng + Jeruk Dingin\",\r\n                \"variant\": \"-\",\r\n                \"quantity\": 2,\r\n                \"price\": 23000,\r\n                \"total\": 46000\r\n            }\r\n        ],\r\n        \"subtotal\": 87000\r\n    }\r\n}"
+				}
+			]
+		}
+	]
+}
